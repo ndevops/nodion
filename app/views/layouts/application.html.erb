@@ -2,13 +2,40 @@
 <html>
 <head>
   <title>Nodion</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <header class="app-header">
+    <div class="container">
+      <%= link_to authenticated_root_path, :class => 'logo' do %>
+        <%= image_tag("logo.svg", size: "108x22") %>
+      <% end %>
+      <%= render 'shared/nav' %>
+      <ul class="nav nav-hor nav-auth">
+        <% if user_signed_in? %>
+          <li><a href="#"><%= current_user.email %></a></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path, :class => 'sign-up' %></li>
+        <% end %>
+      </ul>
+      <div class="node-create">
+        <p><%= link_to "Create Node", new_node_path, :class => 'button button-green' %></p>
+      </div>
+    </div>
+  </header>
+
+  <section class="app-content">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </section>
+
 
 </body>
 </html>
