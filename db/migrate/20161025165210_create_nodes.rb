@@ -7,6 +7,7 @@ class CreateNodes < ActiveRecord::Migration
       t.text :hostname
       t.text :status, default: 'new'
 
+      t.integer :user_id
       t.integer :image_id
       t.integer :plan_id
       t.integer :region_id

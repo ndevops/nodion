@@ -4,6 +4,8 @@ class CreatePlans < ActiveRecord::Migration
 
       t.text :uuid
 
+      t.string :name
+
 
       t.timestamps null: false
     end

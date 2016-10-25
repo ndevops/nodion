@@ -5,9 +5,10 @@ class CreateImages < ActiveRecord::Migration
       t.text :uuid
 
       t.text :name
-
-      t.integer :distribution_id
+      t.text :version
       
+      t.integer :distribution_id
+
       t.timestamps null: false
     end
   end

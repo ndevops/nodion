@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+ubuntu = Distribution.create(name: 'Ubuntu')
+debian = Distribution.create(name: 'Debian')
+centos = Distribution.create(name: 'CentOS')
+freebsd = Distribution.create(name: 'FreeBSD')
+
+Image.create(name: 'Ubuntu 16.04', version: '16.04', distribution_id: ubuntu.id)
+Image.create(name: 'Ubuntu 14.04', version: '16.04', distribution_id: ubuntu.id)
+
+Plan.create(name: '1GB')
+Plan.create(name: '2GB')
+
+Region.create(name: 'FRA1')
+Region.create(name: 'AMS1')

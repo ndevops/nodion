@@ -19,4 +19,5 @@ group :development do
   gem 'spring'
 end
 
+gem 'puma', '~> 3.6.0'
 gem 'devise', '~> 4.2.0'
