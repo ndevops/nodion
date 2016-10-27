@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+  get 'users/index'
+  end
+
   devise_for :users
 
   devise_scope :user do
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
     resources :regions
     resources :images
     resources :distributions
+    resources :users
   end
 
 end

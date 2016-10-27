@@ -1,4 +1,4 @@
-class NodeAction
+class HypervisorAction
   def initialize(hostname, user, options={})
     @hostname = hostname
     @user = user
@@ -8,7 +8,9 @@ class NodeAction
   def test_connection
     begin
       Net::SSH.start("#{@hostname}", "#{@user}", :password => "#{@password}", :timeout => 10) do |ssh|
-        true
+        #
+        # TODO: Setup SSH Keys
+        #
       end
     rescue Timeout::Error
       false

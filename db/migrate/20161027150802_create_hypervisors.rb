@@ -4,6 +4,7 @@ class CreateHypervisors < ActiveRecord::Migration
 
       t.text :hostname
       t.integer :port
+      t.boolean :locked
 
       t.integer :region_id
 
