@@ -14,4 +14,13 @@ Rails.application.routes.draw do
 
   resources :nodes
 
+  namespace :admin do
+    resources :hypervisors
+    resources :nodes
+    resources :plans
+    resources :regions
+    resources :images
+    resources :distributions
+  end
+
 end

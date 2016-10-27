@@ -11,6 +11,7 @@ class CreateNodes < ActiveRecord::Migration
       t.integer :image_id
       t.integer :plan_id
       t.integer :region_id
+      t.integer :hypervisor_id
 
       t.timestamps null: false
     end

@@ -1,0 +1,6 @@
+<h1>Hypervisors</h1>
+<%= link_to "New HV", new_admin_hypervisor_path, :class => 'button button-green' %>
+<hr>
+<% @hypervisors.each do |hypervisor| %>
+  <p><%= hypervisor.id %></p>
+<% end %>

@@ -1,0 +1,39 @@
+<%= form_for @hypervisor, url: admin_hypervisors_path do |f| %>
+
+  <% if @hypervisor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hypervisor.errors.count, "error") %> prohibited this hypervisor from being saved:</h2>
+      <ul>
+        <% @hypervisor.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :hostname %><br>
+    <%= f.text_field :hostname %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :port %><br>
+    <%= f.text_field :port %>
+  </p>
+
+  <p>
+    <%= f.label :region_id %><br>
+    <%= f.collection_select :region_id, Region.all, :id, :name %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

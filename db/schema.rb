@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027130607) do
+ActiveRecord::Schema.define(version: 20161027150802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "distributions", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hypervisors", force: :cascade do |t|
+    t.text     "hostname"
+    t.integer  "port"
+    t.integer  "region_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,13 +57,14 @@ ActiveRecord::Schema.define(version: 20161027130607) do
   create_table "nodes", force: :cascade do |t|
     t.text     "uuid"
     t.text     "hostname"
-    t.text     "status",     default: "new"
+    t.text     "status",        default: "new"
     t.integer  "user_id"
     t.integer  "image_id"
     t.integer  "plan_id"
     t.integer  "region_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "hypervisor_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "plans", force: :cascade do |t|
