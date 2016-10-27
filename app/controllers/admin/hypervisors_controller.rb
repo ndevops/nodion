@@ -19,6 +19,7 @@ class Admin::HypervisorsController < Admin::ApplicationController
     @hypervisor = Hypervisor.new(hypervisor_params)
 
     if @hypervisor.save
+      
       redirect_to admin_hypervisors_path
     else
       render 'new'
