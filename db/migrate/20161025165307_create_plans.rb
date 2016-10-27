@@ -4,8 +4,17 @@ class CreatePlans < ActiveRecord::Migration
 
       t.text :uuid
 
-      t.string :name
+      t.text :name
 
+      t.text :ram
+      t.integer :ram_value
+
+      t.text :cpu
+      t.integer :cpu_value
+
+      t.text :storage
+      t.integer :storage_value
+      t.text :storage_type
 
       t.timestamps null: false
     end

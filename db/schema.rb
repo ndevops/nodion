@@ -60,9 +60,16 @@ ActiveRecord::Schema.define(version: 20161027130607) do
 
   create_table "plans", force: :cascade do |t|
     t.text     "uuid"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "name"
+    t.text     "ram"
+    t.integer  "ram_value"
+    t.text     "cpu"
+    t.integer  "cpu_value"
+    t.text     "storage"
+    t.integer  "storage_value"
+    t.text     "storage_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "profiles", force: :cascade do |t|
