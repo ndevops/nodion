@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NodeIpTest < ActiveSupport::TestCase
+class Node::IpTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
