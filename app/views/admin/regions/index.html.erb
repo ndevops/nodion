@@ -1,5 +1,6 @@
 <h1>Regions</h1>
-
+<%= link_to "New Region", new_admin_region_path, :class => 'button button-green' %>
+<hr>
 <% @regions.each do |region| %>
   <p><%= region.name %></p>
 <% end %>
