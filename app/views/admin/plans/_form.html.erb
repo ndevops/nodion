@@ -1,0 +1,43 @@
+<%= form_for @plan, url: admin_plans_path do |f| %>
+
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+      <ul>
+        <% @plan.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :ram_value %><br>
+    <%= f.range_field :ram_value, :in => 512..262144, :step => 512 %>
+  </p>
+
+  <p>
+    <%= f.label :cpu_value %><br>
+    <%= f.range_field :cpu_value, :in => 1..44, :step => 1 %>
+  </p>
+
+  <p>
+    <%= f.label :storage_value %><br>
+    <%= f.range_field :storage_value, :in => 5..2000, :step => 5 %>
+  </p>
+
+  <p>
+    <%= f.label :storage_type %><br>
+    <%= f.select :storage_type, options_for_select([["HDD", "hdd"], ["SSD", "ssd"]]), :prompt => true %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
