@@ -309,7 +309,7 @@ h6 {
   .row .col._4-5 {
     width: 80%; }
   .row .col._3-4 {
-    width: 75%; }
+    width: 75% !important; }
   .row .col._2-3 {
     width: 66.666%; }
   .row .col._3-5 {
