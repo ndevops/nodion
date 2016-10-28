@@ -1,13 +1,12 @@
 class HypervisorAction
-  def initialize(hostname, user, options={})
+  def initialize(hostname, options={})
     @hostname = hostname
-    @user = user
     @password = options[:password]
   end
 
   def test_connection
     begin
-      Net::SSH.start("#{@hostname}", "#{@user}", :password => "#{@password}", :timeout => 10) do |ssh|
+      Net::SSH.start("#{@hostname}", "root", :password => "#{@password}", :timeout => 10) do |ssh|
         @key_file = File.read(ENV['HOME']+'/.ssh/id_rsa.pub')
         ssh.exec!("echo '#{@key_file}' >> /root/.ssh/authorized_keys")
       end
@@ -21,4 +20,5 @@ class HypervisorAction
       false
     end
   end
+
 end

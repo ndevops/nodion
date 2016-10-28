@@ -2,5 +2,6 @@
 <%= link_to "New HV", new_admin_hypervisor_path, :class => 'button button-green' %>
 <hr>
 <% @hypervisors.each do |hypervisor| %>
-  <p><%= hypervisor.id %></p>
+  <p><%= hypervisor.hostname %> – <%= hypervisor.status %> – <%= link_to 'Delete', admin_hypervisor_path(hypervisor), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button button-red button-small' %></p>
+</p>
 <% end %>

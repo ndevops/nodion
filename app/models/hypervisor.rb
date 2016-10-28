@@ -8,7 +8,7 @@ class Hypervisor < ActiveRecord::Base
   validate :is_reachable?
 
   def is_reachable?
-    connection = ::HypervisorAction.new(self.hostname, "root", {:password => "#{self.password}"}).test_connection
+    connection = ::HypervisorAction.new(self.hostname, {:password => "#{self.password}"}).test_connection
     if connection == false
       errors.add("HV:", "Not reachable")
     end

@@ -22,3 +22,4 @@ end
 gem 'puma', '~> 3.6.0'
 gem 'devise', '~> 4.2.0'
 gem 'net-ssh', '~> 3.2.0'
+gem 'crono', '~> 1.0.3'

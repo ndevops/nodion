@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027191554) do
+ActiveRecord::Schema.define(version: 20161028190432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "crono_jobs", force: :cascade do |t|
+    t.string   "job_id",            null: false
+    t.text     "log"
+    t.datetime "last_performed_at"
+    t.boolean  "healthy"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "crono_jobs", ["job_id"], name: "index_crono_jobs_on_job_id", unique: true, using: :btree
 
   create_table "distributions", force: :cascade do |t|
     t.string   "name"
@@ -26,9 +37,10 @@ ActiveRecord::Schema.define(version: 20161027191554) do
     t.text     "hostname"
     t.integer  "port"
     t.boolean  "locked"
+    t.text     "status",     default: "new"
     t.integer  "region_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "images", force: :cascade do |t|

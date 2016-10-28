@@ -5,7 +5,7 @@ class Admin::ApplicationController < ApplicationController
 
   def check_if_admin
     if current_user.admin == false
-      redirect_to root_path
+      redirect_to authenticated_root_path
     end
   end
 end
