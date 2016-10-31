@@ -11,7 +11,7 @@
 
   <header class="app-header">
     <div class="container">
-      <%= link_to authenticated_root_path, :class => 'logo' do %>
+      <%= link_to nodes_path, :class => 'logo' do %>
         <%= image_tag("logo.svg", size: "108x22") %>
       <% end %>
       <%= render 'shared/nav' %>
@@ -34,14 +34,47 @@
     <div class="container">
       <div class="row">
         <div class="col _1-4">
-          <ul class="nav">
-            <li><%= link_to "Hypervisors", admin_hypervisors_path %></li>
-            <li><%= link_to "Nodes", admin_nodes_path %></li>
-            <li><%= link_to "Plans", admin_plans_path %></li>
-            <li><%= link_to "Regions", admin_regions_path %></li>
-            <li><%= link_to "Images", admin_images_path %></li>
-            <li><%= link_to "Distributions", admin_distributions_path %></li>
-            <li><%= link_to "Users", admin_users_path %></li>
+          <ul class="nav nav-admin">
+            <li>
+              <%= link_to admin_hypervisors_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>Hypervisors
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_nodes_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>Nodes
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_ipblocks_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>IP Blocks
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_plans_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>Plans
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_regions_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>Regions
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_images_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>Images
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_distributions_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>Distributions
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_users_path do %>
+                <span><%= image_tag("server.svg", size: "18x18") %></span>Users
+              <% end %>
+            </li>
           </ul>
         </div>
         <div class="col _3-4">

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+  get 'ipblocks/index'
+  end
+
+  namespace :admin do
   get 'users/index'
   end
 
@@ -17,10 +21,13 @@ Rails.application.routes.draw do
   end
 
   resources :nodes
+  resources :snapshots
+  get 'api' => 'api#index', as: :api
 
   namespace :admin do
     resources :hypervisors
     resources :nodes
+    resources :ipblocks
     resources :plans
     resources :regions
     resources :images

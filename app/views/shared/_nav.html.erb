@@ -1,5 +1,7 @@
 <ul class="nav nav-hor nav-main">
   <li><%= nav_link "Nodes", nodes_path %></li>
+  <li><%= nav_link "Snapshots", snapshots_path %></li>
+  <li><%= nav_link "API", api_path %></li>
   <% if current_user.admin == true %>
   <li><%= nav_link "Admin", admin_hypervisors_path %></li>
   <% end %>

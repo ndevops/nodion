@@ -1,0 +1,7 @@
+<h1>IP Blocks</h1>
+<%= link_to "New IP Block", new_admin_ipblock_path, :class => 'button button-green' %>
+<hr>
+<% @ipblocks.each do |ip| %>
+  <p><%= ip.value %> – <%= link_to 'Delete', admin_ipblock_path(ip), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button button-red button-small' %></p>
+</p>
+<% end %>
