@@ -1,6 +1,35 @@
-<h1><%= @node.hostname %></h1>
-<p><%= @node.plan.ram %> / <%= @node.plan.cpu %> / <%= @node.plan.storage %> <%= @node.plan.storage_type %> / <%= @node.image.name %></p>
-<p>IPv4: <% if @node.ips.any? %><%= @node.ips.first.value %><% end %></p>
-<p>Status: <%= @node.status %></p>
+<header class="node-header">
+  <h1><%= @node.hostname %></h1>
+  <p class="lead"><%= @node.plan.ram %> / <%= @node.plan.storage %> <%= @node.plan.storage_type %> / <%= @node.region.name %> / <%= @node.image.name %></p>
+
+  <section class="node-info">
+    <div class="row">
+      <div class="col _1-4">
+        IPv4: <% if @node.ips.any? %><%= @node.ips.first.value %><% end %>
+      </div>
+      <div class="col _1-4">
+        IPv6: <% if @node.ips.any? %><%= @node.ips.first.value %><% end %>
+      </div>
+      <div class="col _1-4">
+        Private IP: <% if @node.ips.any? %><%= @node.ips.first.value %><% end %>
+      </div>
+      <div class="col _1-4">
+        Console
+      </div>
+    </div>
+  </section>
+</header>
+
+<nav class="app-nav">
+  <ul class="nav nav-hor">
+    <li><%= link_to "Access", authenticated_root_path %></li>
+    <li><%= link_to "Power", authenticated_root_path %></li>
+    <li><%= link_to "Resize", authenticated_root_path %></li>
+    <li><%= link_to "Backups", authenticated_root_path %></li>
+    <li><%= link_to "Snapshots", authenticated_root_path %></li>
+    <li><%= link_to "Destroy", authenticated_root_path %></li>
+  </ul>
+</nav>
+
 <hr>
 <p><%= link_to 'Delete', node_path(@node), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button button-red button-large' %></p>

@@ -5,7 +5,8 @@ class CreateIps < ActiveRecord::Migration
       t.integer :version
       t.text :value
       t.boolean :public
-
+      t.boolean :used
+      
       t.timestamps null: false
     end
   end

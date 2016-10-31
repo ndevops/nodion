@@ -15,8 +15,8 @@ freebsd = Distribution.create(name: 'FreeBSD')
 Image.create(name: 'Ubuntu 16.04', version: '16.04', distribution_id: ubuntu.id)
 Image.create(name: 'Ubuntu 14.04', version: '16.04', distribution_id: ubuntu.id)
 
-Plan.create(name: '1GB', ram: '1 GB', cpu: '1 Core', storage: '20 GB', storage_type: 'SSD')
-Plan.create(name: '2GB', ram: '2 GB', cpu: '2 Cores', storage: '40 GB', storage_type: 'SSD')
+Plan.create(name: '1GB', ram: '1 GB', cpu: '1 Core', cpu_value: '1', storage: '20 GB', storage_type: 'SSD')
+Plan.create(name: '2GB', ram: '2 GB', cpu: '2 Cores', cpu_value: '2', storage: '40 GB', storage_type: 'SSD')
 
 Region.create(name: 'FRA1')
 Region.create(name: 'AMS1')

@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20161028190432) do
     t.integer  "version"
     t.text     "value"
     t.boolean  "public"
+    t.boolean  "used"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

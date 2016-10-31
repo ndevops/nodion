@@ -4,6 +4,31 @@ body {
   color: #444;
 }
 
+.button-green {
+  background-color: #398266;
+}
+
+.button-green:hover {
+  background-color: #2d7362;
+}
+
+table.nodes {
+  font-size: 18px;
+
+  .node-name {
+
+    a {
+      color: #398266;
+      font-weight: 600;
+    }
+
+    small {
+      display: block;
+      color: #7a7a7a;
+    }
+  }
+}
+
 .nav-admin {
 
   li {
@@ -62,7 +87,8 @@ body {
 
 .app-header .nav li a {
   display: block;
-  padding: 25px 8px 20px 8px;;
+  padding: 25px 0 20px 0;
+  margin: 0 8px;
   font-size: 18px;
   border-bottom: 4px solid transparent;
   color: #444;
@@ -79,5 +105,36 @@ body {
     font-weight: 300;
     font-size: 36px;
     margin-top: 0;
+  }
+}
+
+.node-header {
+  background: #f1f1f1;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.app-nav {
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+
+  .nav.nav-hor {
+
+    li {
+      a {
+        display: block;
+        padding: 20px;
+        color: #636363;
+        border-bottom: 2px solid transparent;
+      }
+
+      a:hover {
+        color: #303030;
+      }
+
+      a.active {
+        border-bottom: 2px solid #398266;
+      }
+    }
   }
 }
